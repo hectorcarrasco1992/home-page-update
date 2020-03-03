@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %> 
+    
+    <title>Online Shopper</title>
+    
+  </head>
+  <body>
+    <% include ../partials/nav %> 
+    <div id="container" class="fluid">
+      <a href="/auth/logout">logout</a>
+      <main role="main">
+        <% include ../partials/jumbotron %> 
+        <div class="container">
+          <div class="row">
+          </div>
+          <!-- the row class is used in csss to make everything appear in a row  -->
+        <div class="row">
+          <% Product.forEach(({name,picture,text}) =>{%>
+            
+            <!-- the cards with the content WITHIN THE ROW DIV  -->
+            <div class="col-md-4" style="width:20rem;">
+              <div class="card">
+                <img
+                src="<%= picture %> "
+                class="card-img-top"
+                alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title"><%= name %> </h5>
+                  <p class="card-text">
+                    <%= text %> 
+                  </p>
+                </div>
+              </div>
+            </div>   
+            <%})%> 
+        
+        </main>
+      </div>
+  <% include ../partials/footer %> 
+<% include ../partials/scripts %> 
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
